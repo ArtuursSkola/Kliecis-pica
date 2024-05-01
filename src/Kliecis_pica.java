@@ -2,10 +2,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -55,9 +57,16 @@ public class Kliecis_pica extends JFrame {
 	    btnNewButton = new JButton("Turpināt");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String phoneNumber = txtTalrunis.getText();
+				String vards = txtVrds.getText();
+				String adrese = txtAdrese.getText();
+				if (phoneNumber.length() ==8 && phoneNumber.matches("\\d+") && vards.length()>2 && vards.matches("[a-zA-Z]+")
+						&& adrese.length()>4 && adrese.matches("[a-zA-Z]+")) {
+				Kliecis_pica1 newWIndow = new Kliecis_pica1();
+				newWIndow.setVisible(true);
 				Kliecis_pica.this.dispose();
 			}
-			
+			}
 		});
 		btnNewButton.setForeground(new Color(255, 0, 0));
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.BOLD | Font.ITALIC, 16));
@@ -112,6 +121,8 @@ public class Kliecis_pica extends JFrame {
 		
 		lblNewLabel_1 = new JLabel("New label");
 		lblNewLabel_1.setBounds(-121, -40, 545, 340);
+		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
+		lblNewLabel_1.setIcon(new ImageIcon(Backround));
 		contentPane.add(lblNewLabel_1);
 		
 }
