@@ -4,8 +4,8 @@ Picas pasūtīšanas sistēma
 
 ## **Darāmo darbu saraksts**
 
-- [x] Izveidot Log in sitēmu
-- [x]  Izveidot picas veidošanas logs
+- [x] Izveidot Log in sistēmu
+- [x]  Izveidot picas veidošanas logu
 - [x]  Izveidots picas cenas kalkulātors
 - [ ]  Programma aprēķina cenu
 - [ ]  Programma izvada piegādes laiku
