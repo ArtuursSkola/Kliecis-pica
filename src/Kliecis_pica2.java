@@ -41,13 +41,13 @@ public class Kliecis_pica2 extends JFrame {
 		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Jūsu izvēlētās sastāvdaļas:");
-		lblNewLabel_2_1.setForeground(new Color(128, 0, 0));
+		lblNewLabel_2_1.setForeground(new Color(255, 0, 0));
 		lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 20));
 		lblNewLabel_2_1.setBounds(10, 157, 376, 37);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Maksa:");
-		lblNewLabel_2.setForeground(new Color(128, 0, 0));
+		lblNewLabel_2.setForeground(new Color(255, 0, 0));
 		lblNewLabel_2.setFont(new Font("Serif", Font.ITALIC, 27));
 		lblNewLabel_2.setBounds(10, 76, 208, 37);
 		contentPane.add(lblNewLabel_2);

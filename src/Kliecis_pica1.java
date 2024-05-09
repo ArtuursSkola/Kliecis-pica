@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 public class Kliecis_pica1 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -41,18 +42,39 @@ public class Kliecis_pica1 extends JFrame {
 		setBounds(100, 100, 564, 405);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Pirkt");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Kliecis_pica2 newWIndow = new Kliecis_pica2();
-				newWIndow.setVisible(true);
-				Kliecis_pica1.this.dispose();
-			}
-		});
+	    ImageIcon originalIcon = new ImageIcon("src/resources/Pizza.png");
+	    ImageIcon resizedIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+	    JButton btnNewButton_1 = new JButton("");
+	    btnNewButton_1.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		Kliecis_pica2 newWIndow = new Kliecis_pica2();
+	    		newWIndow.setVisible(true);
+	    		Kliecis_pica1.this.dispose();
+	    	}
+	    });
+	    
+	    JLabel lblNewLabel_7 = new JLabel("Pirkt");
+	    lblNewLabel_7.setFont(new Font("Serif", Font.ITALIC, 20));
+	    lblNewLabel_7.setForeground(new Color(255, 0, 0));
+	    lblNewLabel_7.setBounds(54, 254, 78, 49);
+	    contentPane.add(lblNewLabel_7);
+	    btnNewButton_1.setIcon(resizedIcon);
+	    btnNewButton_1.setBounds(27, 294, 109, 48);
+	    contentPane.add(btnNewButton_1);
+
+
+	    
+	    JTextArea txtrLielums_1 = new JTextArea();
+	    txtrLielums_1.setWrapStyleWord(true);
+	    txtrLielums_1.setText("Lielums: ");
+	    txtrLielums_1.setRows(5);
+	    txtrLielums_1.setLineWrap(true);
+	    txtrLielums_1.setEditable(false);
+	    txtrLielums_1.setBounds(252, 259, 82, 30);
+	    contentPane.add(txtrLielums_1);
 		
 	    txtrCena = new JTextArea();
 		txtrCena.setWrapStyleWord(true);
@@ -65,11 +87,10 @@ public class Kliecis_pica1 extends JFrame {
 		
 		JTextArea txtrLielums = new JTextArea();
 		txtrLielums.setWrapStyleWord(true);
-		txtrLielums.setText("Lielums: ");
 		txtrLielums.setRows(5);
 		txtrLielums.setLineWrap(true);
 		txtrLielums.setEditable(false);
-		txtrLielums.setBounds(252, 259, 286, 30);
+		txtrLielums.setBounds(330, 259, 208, 30);
 		contentPane.add(txtrLielums);
 		
 		JTextArea txtrMrces = new JTextArea();
@@ -119,6 +140,7 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Maza_Poga.isSelected()) {
+			txtrLielums.setText("");
 			txtrLielums.append(" Mazā pica");
 			updatePrice(6.0);
 		}else {
@@ -136,6 +158,7 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Liela_Poga.isSelected()) {
+			txtrLielums.setText("");
 			txtrLielums.append(" Lielā pica");
 			updatePrice(10.0);
 		}else {
@@ -153,6 +176,7 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Vid_Poga.isSelected()) {
+			txtrLielums.setText("");
 			txtrLielums.append(" Vidējā pica");
 			updatePrice(8.0);
 		}else {
@@ -407,11 +431,12 @@ public class Kliecis_pica1 extends JFrame {
 			Liela_Poga.setSelected(false);
 			Maza_Poga.setSelected(false);
 }
-		});
+		});	
 }
 	private void updatePrice(double priceChange) {
 		String currentPriceText = txtrCena.getText();
-		String currentPriceStr = currentPriceText.substring(currentPriceText.index0f("Cena: ")+6, currentPriceText.index0f(" eur"));
+		String currentPriceStr = currentPriceText.substring(currentPriceText.indexOf("Cena: ")+6,
+		currentPriceText.indexOf(" eur"));
 		double currentPrice = Double.parseDouble(currentPriceStr);
 		double newPrice = currentPrice + priceChange;
 		txtrCena.setText("Cena: "+ newPrice + " eur\n");
