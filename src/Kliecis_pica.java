@@ -54,6 +54,7 @@ public class Kliecis_pica extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 	    btnNewButton = new JButton("Turpināt");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -68,10 +69,27 @@ public class Kliecis_pica extends JFrame {
 			}
 			}
 		});
+		
+		
+		
 		btnNewButton.setForeground(new Color(255, 0, 0));
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.BOLD | Font.ITALIC, 16));
 		btnNewButton.setBounds(165, 179, 116, 23);
 		contentPane.add(btnNewButton);
+		
+	    JButton maja = new JButton("");
+	    maja.setBorder(null);
+	    maja.setContentAreaFilled(false);
+	    maja.setIcon(new ImageIcon(Kliecis_pica.class.getResource("/resources/maja.png")));
+	    maja.setBounds(281, -17, 232, 101);
+		maja.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Kliecis_piaa newWIndow = new Kliecis_piaa();
+				newWIndow.setVisible(true);
+				Kliecis_pica.this.dispose();
+			}
+		});
+		contentPane.add(maja);
 		
 		JLabel lblNewLabel = new JLabel("Picelīno");
 		lblNewLabel.setBackground(new Color(192, 192, 192));
@@ -79,6 +97,8 @@ public class Kliecis_pica extends JFrame {
 		lblNewLabel.setForeground(new Color(255, 0, 0));
 		lblNewLabel.setBounds(174, 11, 277, 48);
 		contentPane.add(lblNewLabel);
+		
+		
 		
 		txtVrds = new JTextField();
 		txtVrds.setToolTipText("");

@@ -47,7 +47,6 @@ public class Kliecis_piaa extends JFrame {
 	    JButton btnNewButton = new JButton("");
 	    btnNewButton.setBorder(null);
 	    btnNewButton.setContentAreaFilled(false);
-	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
 	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
 	    btnNewButton.setBounds(297, 218, 220, 73);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -79,7 +78,6 @@ public class Kliecis_piaa extends JFrame {
 	    	public void actionPerformed(ActionEvent e) {
 	    	}
 	    });
-	    btnNewButton1.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
 	    btnNewButton1.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
 	    btnNewButton1.setBounds(307, 302, 210, 63);
 	    
