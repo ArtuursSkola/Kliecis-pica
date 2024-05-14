@@ -57,6 +57,16 @@ public class Kliecis_piaa extends JFrame {
 			}
 		});
 	    
+	    ImageIcon originalImageIcon2 = new ImageIcon(getClass().getResource("/resources/wheel.png"));
+	    int scaledWidth2 = 50;
+	    int scaledHeight2 = 50;
+	    ImageIcon scaledImageIcon2 = new ImageIcon(originalImageIcon2.getImage().getScaledInstance(scaledWidth2, scaledHeight2, java.awt.Image.SCALE_SMOOTH));
+	    contentPane.setLayout(null);
+	    
+	    JLabel slice = new JLabel(scaledImageIcon2);
+	    slice.setBounds(619, -85, 261, 233);
+	    contentPane.add(slice);
+		
 	    JLabel lblApskattVecosStijumus = new JLabel("Vecie sūtijumi");
 	    lblApskattVecosStijumus.setForeground(Color.WHITE);
 	    lblApskattVecosStijumus.setFont(new Font("Segoe UI", Font.BOLD, 19));
@@ -87,7 +97,6 @@ public class Kliecis_piaa extends JFrame {
 	    JLabel backroundLabel = new JLabel(scaledImageIcon);
 	    backroundLabel.setBounds(-12, 0, 807, 561);
 	    contentPane.add(backroundLabel);
-	    
 	    
 
 	    

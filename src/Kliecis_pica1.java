@@ -120,7 +120,7 @@ public class Kliecis_pica1 extends JFrame {
 	    maja.setBorder(null);
 	    maja.setContentAreaFilled(false);
 	    maja.setIcon(new ImageIcon(Kliecis_pica1.class.getResource("/resources/maja.png")));
-	    maja.setBounds(394, -13, 232, 101);
+	    maja.setBounds(391, -13, 232, 101);
 		maja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
 				Kliecis_piaa newWIndow = new Kliecis_piaa();
@@ -486,6 +486,10 @@ public class Kliecis_pica1 extends JFrame {
 	    		Kliecis_pica2 newWIndow = new Kliecis_pica2();
 	    		newWIndow.setVisible(true);
 	    		Kliecis_pica1.this.dispose();
+	    	}if(!Pats.isSelected() && (Liela_Poga.isSelected() || Vid_Poga.isSelected() || Maza_Poga.isSelected())) {
+	    		Kliecis_pica3 newWindow = new Kliecis_pica3();
+	    		newWindow.setVisible(true);
+	    		Kliecis_pica1.this.dispose();
 	    	}
 	    	}
 	    });
@@ -525,14 +529,14 @@ public class Kliecis_pica1 extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(154, 151, 669, 439);
-		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
+		Image Backround = new ImageIcon(this.getClass().getResource("/resources/t.jpg")).getImage();
 		contentPane.add(lblNewLabel);
 		
 		
 		JLabel lblNewLabel_1 = new JLabel("Pica");
 		lblNewLabel_1.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel_1.setForeground(new Color(255, 255, 0));
-		lblNewLabel_1.setBounds(-48, 0, 747, 406);
+		lblNewLabel_1.setBounds(-32, -59, 839, 534);
 		contentPane.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(Backround));
 		Pats.addActionListener(e ->{

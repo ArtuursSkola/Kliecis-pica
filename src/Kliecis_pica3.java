@@ -5,6 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
 
 public class Kliecis_pica3 extends JFrame {
 
@@ -34,16 +40,75 @@ public class Kliecis_pica3 extends JFrame {
 
 		setContentPane(contentPane);
 	
+
+		
     ImageIcon originalImageIcon = new ImageIcon(getClass().getResource("/resources/cep.jpg"));
     int scaledWidth = 700;
     int scaledHeight = 700;
     ImageIcon scaledImageIcon = new ImageIcon(originalImageIcon.getImage().getScaledInstance(scaledWidth, scaledHeight, java.awt.Image.SCALE_SMOOTH));
     contentPane.setLayout(null);
     
-    JLabel label = new JLabel(scaledImageIcon);
-    label.setBounds(-26, -141, 700, 700);
-    contentPane.add(label);
+    JButton btnNewButton = new JButton("New button");
+    btnNewButton.setBorder(null);
+    btnNewButton.setContentAreaFilled(false);
+    btnNewButton.setBounds(250, 383, 182, 45);
+    btnNewButton.setForeground(new Color(255, 0, 0));
+    btnNewButton.setBackground(new Color(255, 0, 0));
+    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
+    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
+    btnNewButton.addActionListener(new ActionListener() {
+    	public void actionPerformed(ActionEvent e) {
+    		Kliecis_piaa newWIndow = new Kliecis_piaa();
+    		newWIndow.setVisible(true);
+    		Kliecis_pica3.this.dispose();
+    	}
+    });
+    
 
+    
+
+    
+    JLabel lblNewLabel_3 = new JLabel("Atgriezties");
+    lblNewLabel_3.setForeground(Color.WHITE);
+    lblNewLabel_3.setFont(new Font("Serif", Font.BOLD, 25));
+    lblNewLabel_3.setBounds(275, 384, 188, 30);
+    contentPane.add(lblNewLabel_3);
+    contentPane.add(btnNewButton);
+    
+    
+    JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc: 40 minūtuem");
+    lblNewLabel_2_1.setForeground(Color.WHITE);
+    lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
+    lblNewLabel_2_1.setBounds(47, 259, 601, 94);
+    contentPane.add(lblNewLabel_2_1);
+    
+    JLabel lblNewLabel_2 = new JLabel("Paldies par pirkumu!");
+    lblNewLabel_2.setForeground(Color.RED);
+    lblNewLabel_2.setFont(new Font("Serif", Font.ITALIC, 27));
+    lblNewLabel_2.setBounds(213, 54, 341, 37);
+    contentPane.add(lblNewLabel_2);
+    
+    JLabel lblNewLabel_6 = new JLabel("Picelīno");
+    lblNewLabel_6.setForeground(Color.RED);
+    lblNewLabel_6.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
+    lblNewLabel_6.setBackground(Color.LIGHT_GRAY);
+    lblNewLabel_6.setBounds(275, 0, 277, 48);
+    contentPane.add(lblNewLabel_6);
+    
+    ImageIcon originalImageIcon2 = new ImageIcon(getClass().getResource("/resources/slice.png"));
+    int scaledWidth2 = 200;
+    int scaledHeight2 = 200;
+    ImageIcon scaledImageIcon2 = new ImageIcon(originalImageIcon2.getImage().getScaledInstance(scaledWidth2, scaledHeight2, java.awt.Image.SCALE_SMOOTH));
+    contentPane.setLayout(null);
+    
+    JLabel slice = new JLabel(scaledImageIcon2);
+    slice.setBounds(167, 54, 317, 284);
+    contentPane.add(slice);
+    
+    JLabel label = new JLabel(scaledImageIcon);
+    label.setBounds(-16, -114, 700, 700);
+    contentPane.add(label);
+    
 }
 
 }

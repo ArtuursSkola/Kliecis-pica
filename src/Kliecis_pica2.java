@@ -33,7 +33,7 @@ public class Kliecis_pica2 extends JFrame {
 
 	public Kliecis_pica2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(600, 500);
+		setSize(700, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -61,12 +61,20 @@ public class Kliecis_pica2 extends JFrame {
 	    		Kliecis_pica2.this.dispose();
 	    	}
 	    });
+	    ImageIcon originalImageIcon2 = new ImageIcon(getClass().getResource("/resources/slice.png"));
+	    int scaledWidth2 = 200;
+	    int scaledHeight2 = 200;
+	    ImageIcon scaledImageIcon2 = new ImageIcon(originalImageIcon2.getImage().getScaledInstance(scaledWidth2, scaledHeight2, java.awt.Image.SCALE_SMOOTH));
+	    contentPane.setLayout(null);
 	    
+	    JLabel slice = new JLabel(scaledImageIcon2);
+	    slice.setBounds(207, 107, 205, 195);
+	    contentPane.add(slice);
 	    		
 	    	    JButton btnNewButton = new JButton("New button");
 	    	    btnNewButton.setBorder(null);
 	    	    btnNewButton.setContentAreaFilled(false);
-	    	    btnNewButton.setBounds(193, 378, 182, 45);
+	    	    btnNewButton.setBounds(235, 388, 182, 45);
 	    	    btnNewButton.setForeground(new Color(255, 0, 0));
 	    	    btnNewButton.setBackground(new Color(255, 0, 0));
 	    	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
@@ -88,7 +96,7 @@ public class Kliecis_pica2 extends JFrame {
 	    	    JLabel lblNewLabel_3 = new JLabel("Atgriezties");
 	    	    lblNewLabel_3.setForeground(new Color(255, 255, 255));
 	    	    lblNewLabel_3.setFont(new Font("Serif", Font.BOLD, 25));
-	    	    lblNewLabel_3.setBounds(215, 379, 160, 30);
+	    	    lblNewLabel_3.setBounds(254, 389, 160, 30);
 	    	    contentPane.add(lblNewLabel_3);
 	    	    contentPane.add(btnNewButton);
 	    
@@ -97,7 +105,7 @@ public class Kliecis_pica2 extends JFrame {
 	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir: "+laiks+" minūtues");
 	    lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
 	    lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
-	    lblNewLabel_2_1.setBounds(58, 268, 516, 37);
+	    lblNewLabel_2_1.setBounds(91, 297, 516, 37);
 	    contentPane.add(lblNewLabel_2_1);
 	    
 	    JLabel lblNewLabel_6 = new JLabel("Picelīno");
@@ -109,7 +117,7 @@ public class Kliecis_pica2 extends JFrame {
 	    contentPane.add(maja);
 	    
 	    JLabel label = new JLabel(scaledImageIcon);
-	    label.setBounds(0, -132, 700, 700);
+	    label.setBounds(0, -74, 700, 804);
 	    contentPane.add(label);
 	    
 	    JLabel lblNewLabel_1 = new JLabel("Pica");
