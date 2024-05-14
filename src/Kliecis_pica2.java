@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -16,7 +17,6 @@ public class Kliecis_pica2 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -43,11 +43,13 @@ public class Kliecis_pica2 extends JFrame {
 		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
 		
 	    JButton btnNewButton = new JButton("New button");
-	    btnNewButton.setBounds(135, 189, 151, 45);
+	    btnNewButton.setBorder(null);
+	    btnNewButton.setContentAreaFilled(false);
+	    btnNewButton.setBounds(104, 189, 182, 45);
 	    btnNewButton.setForeground(new Color(255, 0, 0));
 	    btnNewButton.setBackground(new Color(255, 0, 0));
 	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
-	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/red.jpg")));
+	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
 	    btnNewButton.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		Kliecis_piaa newWIndow = new Kliecis_piaa();
@@ -59,13 +61,17 @@ public class Kliecis_pica2 extends JFrame {
 	    
 	    JLabel lblNewLabel_3 = new JLabel("Atgriezties");
 	    lblNewLabel_3.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 25));
-	    lblNewLabel_3.setBounds(145, 190, 151, 30);
+	    lblNewLabel_3.setBounds(135, 190, 151, 30);
 	    contentPane.add(lblNewLabel_3);
 	    
-	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir:");
+	   
+		Random rand = new Random();
+		int laiks = rand.nextInt(58-34+1)+34;	
+	    
+	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir:"+laiks+" minūtues");
 	    lblNewLabel_2_1.setForeground(Color.RED);
-	    lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 27));
-	    lblNewLabel_2_1.setBounds(10, 122, 370, 37);
+	    lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 24));
+	    lblNewLabel_2_1.setBounds(10, 122, 424, 37);
 	    contentPane.add(lblNewLabel_2_1);
 	    contentPane.add(btnNewButton);
 		

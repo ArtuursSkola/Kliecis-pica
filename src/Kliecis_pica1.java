@@ -19,8 +19,7 @@ public class Kliecis_pica1 extends JFrame {
 	private JPanel contentPane;
     private JTextArea PiedevasTextArea;
     private JTextArea txtrCena;
-
-    
+    double cena = 0.0;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -44,7 +43,7 @@ public class Kliecis_pica1 extends JFrame {
 		contentPane.setLayout(null);
 		
 	    ImageIcon originalIcon = new ImageIcon("src/resources/Pizza.png");
-	    ImageIcon resizedIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
+	    ImageIcon resizedIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH));
 	    JButton btnNewButton_1 = new JButton("");
 	    btnNewButton_1.setBorder(null);
 	    btnNewButton_1.setContentAreaFilled(false);
@@ -78,7 +77,7 @@ public class Kliecis_pica1 extends JFrame {
 		
 	    txtrCena = new JTextArea();
 		txtrCena.setWrapStyleWord(true);
-		txtrCena.setText("Cena:");
+		txtrCena.setText("Cena: "+cena+" eur");
 		txtrCena.setRows(5);
 		txtrCena.setLineWrap(true);
 		txtrCena.setEditable(false);
@@ -132,59 +131,9 @@ public class Kliecis_pica1 extends JFrame {
 		contentPane.add(lblNewLabel_5);
 		
 		
-		JRadioButton Maza_Poga = new JRadioButton("");
-		Maza_Poga.setBackground(new Color(255, 255, 0));
-		Maza_Poga.setBounds(27, 141, 21, 23);
-		contentPane.add(Maza_Poga);
-		Maza_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Maza_Poga.isSelected()) {
-			txtrLielums.setText("");
-			txtrLielums.append(" Mazā pica");
-			updatePrice(6.0);
-		}else {
-			txtrLielums.setText(PiedevasTextArea.getText().replace(" Mazā pica",""));
-			updatePrice(-6.0);
-		}	
-		}
-	});
+
 		
-		JRadioButton Liela_Poga = new JRadioButton("");
-		Liela_Poga.setBackground(new Color(255, 255, 0));
-		Liela_Poga.setBounds(27, 87, 21, 23);
-		contentPane.add(Liela_Poga);
-		Liela_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Liela_Poga.isSelected()) {
-			txtrLielums.setText("");
-			txtrLielums.append(" Lielā pica");
-			updatePrice(10.0);
-		}else {
-			txtrLielums.setText(PiedevasTextArea.getText().replace(" Lielā pica",""));
-			updatePrice(-10.0);
-		}	
-		}
-	});
 		
-		JRadioButton Vid_Poga = new JRadioButton("");
-		Vid_Poga.setBackground(new Color(255, 255, 0));
-		Vid_Poga.setBounds(27, 113, 21, 23);
-		contentPane.add(Vid_Poga);
-		Vid_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Vid_Poga.isSelected()) {
-			txtrLielums.setText("");
-			txtrLielums.append(" Vidējā pica");
-			updatePrice(8.0);
-		}else {
-			txtrLielums.setText(PiedevasTextArea.getText().replace(" Vidējā pica",""));
-			updatePrice(8.0);
-		}	
-		}
-	});
 		
 		JLabel lblNewLabel_2 = new JLabel("Lielā pica");
 		lblNewLabel_2.setFont(new Font("Serif", Font.ITALIC, 15));
@@ -204,6 +153,7 @@ public class Kliecis_pica1 extends JFrame {
 		lblNewLabel_4.setBounds(54, 141, 84, 23);
 		contentPane.add(lblNewLabel_4);
 		
+		
 		JRadioButton Ananass_Poga = new JRadioButton("");
 		Ananass_Poga.setBackground(Color.YELLOW);
 		Ananass_Poga.setBounds(144, 87, 21, 23);
@@ -213,8 +163,12 @@ public class Kliecis_pica1 extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			if (Ananass_Poga.isSelected()) {
 				PiedevasTextArea.append(" Ananass");
+				cena += 1.5;
+				txtrCena.setText("Cena:  "+cena+" eur");
 			}else {
 				PiedevasTextArea.setText(PiedevasTextArea.getText().replace(" Ananass",""));
+				cena -= 1.5;
+				txtrCena.setText("Cena:  "+cena+" eur");
 			}	
 			}
 		});
@@ -228,6 +182,8 @@ public class Kliecis_pica1 extends JFrame {
 	public void actionPerformed(ActionEvent e) {
 		if (Peperoni_Poga.isSelected()) {
 			PiedevasTextArea.append(" Peperoni");
+			cena += 1.5;
+			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
 			PiedevasTextArea.setText(PiedevasTextArea.getText().replace(" Peperoni",""));
 		}	
@@ -243,6 +199,8 @@ public class Kliecis_pica1 extends JFrame {
 	public void actionPerformed(ActionEvent e) {
 		if (Senes_Poga.isSelected()) {
 			PiedevasTextArea.append(" Senes");
+			cena += 1.5;
+			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
 			PiedevasTextArea.setText(PiedevasTextArea.getText().replace(" Senes",""));
 		}	
@@ -258,6 +216,8 @@ public class Kliecis_pica1 extends JFrame {
 	public void actionPerformed(ActionEvent e) {
 		if (Skinkis_Poga.isSelected()) {
 			PiedevasTextArea.append(" Šķiņķis");
+			cena += 1.5;
+			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
 			PiedevasTextArea.setText(PiedevasTextArea.getText().replace(" Šķiņķis",""));
 		}	
@@ -273,12 +233,83 @@ public class Kliecis_pica1 extends JFrame {
 	public void actionPerformed(ActionEvent e) {
 		if (Desa_Poga.isSelected()) {
 			PiedevasTextArea.append(" Desa");
+			cena += 1.5;
+			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
 			PiedevasTextArea.setText(PiedevasTextArea.getText().replace(" Desa",""));
 		}
 		}
 	});
+		JRadioButton Maza_Poga = new JRadioButton("");
+		Maza_Poga.setBackground(new Color(255, 255, 0));
+		Maza_Poga.setBounds(27, 141, 21, 23);
+		contentPane.add(Maza_Poga);
+		Maza_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Maza_Poga.isSelected()) {
+			txtrLielums.setText("");
+			txtrLielums.append(" Mazā pica");
+			cena = 8;
+			txtrCena.setText("Cena:  "+cena+" eur");
+			Ananass_Poga.setSelected(false);
+			Peperoni_Poga.setSelected(false);
+			Senes_Poga.setSelected(false);
+			Desa_Poga.setSelected(false);
+			Skinkis_Poga.setSelected(false);
+		}else {
+			txtrLielums.setText(PiedevasTextArea.getText().replace(" Mazā pica",""));
+		}	
+		}
+	});
 		
+		JRadioButton Liela_Poga = new JRadioButton("");
+		Liela_Poga.setBackground(new Color(255, 255, 0));
+		Liela_Poga.setBounds(27, 87, 21, 23);
+		contentPane.add(Liela_Poga);
+		Liela_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Liela_Poga.isSelected()) {
+			txtrLielums.setText("");
+			txtrLielums.append(" Lielā pica");
+			cena = 12;
+			txtrCena.setText("Cena:  "+cena+" eur");
+			Ananass_Poga.setSelected(false);
+			Peperoni_Poga.setSelected(false);
+			Senes_Poga.setSelected(false);
+			Desa_Poga.setSelected(false);
+			Skinkis_Poga.setSelected(false);
+		}else {
+			txtrLielums.setText(PiedevasTextArea.getText().replace(" Lielā pica",""));
+			
+			
+		}	
+		}
+	});
+		
+		JRadioButton Vid_Poga = new JRadioButton("");
+		Vid_Poga.setBackground(new Color(255, 255, 0));
+		Vid_Poga.setBounds(27, 113, 21, 23);
+		contentPane.add(Vid_Poga);
+		Vid_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Vid_Poga.isSelected()) {
+			txtrLielums.setText("");
+			txtrLielums.append(" Vidējā pica");
+			cena = 10;
+			txtrCena.setText("Cena:  "+cena+" eur");
+			Ananass_Poga.setSelected(false);
+			Peperoni_Poga.setSelected(false);
+			Senes_Poga.setSelected(false);
+			Desa_Poga.setSelected(false);
+			Skinkis_Poga.setSelected(false);
+		}else {
+			txtrLielums.setText(PiedevasTextArea.getText().replace(" Vidējā pica",""));
+		}	
+		}
+	});
 		JLabel lblNewLabel_2_1 = new JLabel("Ananāss");
 		lblNewLabel_2_1.setForeground(Color.RED);
 		lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 15));
@@ -431,14 +462,9 @@ public class Kliecis_pica1 extends JFrame {
 			Liela_Poga.setSelected(false);
 			Maza_Poga.setSelected(false);
 }
-		});	
-}
-	private void updatePrice(double priceChange) {
-		String currentPriceText = txtrCena.getText();
-		String currentPriceStr = currentPriceText.substring(currentPriceText.indexOf("Cena: ")+6,
-		currentPriceText.indexOf(" eur"));
-		double currentPrice = Double.parseDouble(currentPriceStr);
-		double newPrice = currentPrice + priceChange;
-		txtrCena.setText("Cena: "+ newPrice + " eur\n");
+		
+		});
 	}
-}
+
+	}
+

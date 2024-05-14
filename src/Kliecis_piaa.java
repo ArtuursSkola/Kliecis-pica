@@ -49,7 +49,7 @@ public class Kliecis_piaa extends JFrame {
 	    btnNewButton.setContentAreaFilled(false);
 	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
 	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
-	    btnNewButton.setBounds(281, 266, 220, 73);
+	    btnNewButton.setBounds(297, 218, 220, 73);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Kliecis_pica newWIndow = new Kliecis_pica();
@@ -57,10 +57,16 @@ public class Kliecis_piaa extends JFrame {
 				Kliecis_piaa.this.dispose();
 			}
 		});
+	    
+	    JLabel lblApskattVecosStijumus = new JLabel("Vecie sūtijumi");
+	    lblApskattVecosStijumus.setForeground(Color.WHITE);
+	    lblApskattVecosStijumus.setFont(new Font("Segoe UI", Font.BOLD, 19));
+	    lblApskattVecosStijumus.setBounds(345, 314, 153, 30);
+	    contentPane.add(lblApskattVecosStijumus);
 	    JLabel lblNewLabel = new JLabel("Pasūtīt picu");
 	    lblNewLabel.setForeground(new Color(255, 255, 255));
-	    lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 35));
-	    lblNewLabel.setBounds(386, 75, 210, 39);
+	    lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 22));
+	    lblNewLabel.setBounds(345, 243, 125, 19);
 	    contentPane.add(lblNewLabel);
 	    contentPane.add(btnNewButton);
 
@@ -75,7 +81,7 @@ public class Kliecis_piaa extends JFrame {
 	    });
 	    btnNewButton1.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
 	    btnNewButton1.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
-	    btnNewButton1.setBounds(281, 404, 210, 63);
+	    btnNewButton1.setBounds(307, 302, 210, 63);
 	    
 	    contentPane.add(btnNewButton1);
 
