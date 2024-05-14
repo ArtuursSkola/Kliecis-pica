@@ -240,6 +240,74 @@ public class Kliecis_pica1 extends JFrame {
 		}
 		}
 	});
+		JRadioButton Tomatu_Poga = new JRadioButton("");
+		Tomatu_Poga.setBackground(Color.YELLOW);
+		Tomatu_Poga.setBounds(303, 87, 21, 23);
+		contentPane.add(Tomatu_Poga);
+		Tomatu_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Tomatu_Poga.isSelected()) {
+			txtrMrces.append(" Tomātu");
+			cena += 2;
+			txtrCena.setText("Cena:  "+cena+" eur");
+		}else {
+			txtrMrces.setText(txtrMrces.getText().replace(" Tomātu",""));
+		}
+		}
+	});
+		
+		JRadioButton Majo_Poga = new JRadioButton("");
+		Majo_Poga.setBackground(Color.YELLOW);
+		Majo_Poga.setBounds(303, 113, 21, 23);
+		contentPane.add(Majo_Poga);
+		Majo_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Majo_Poga.isSelected()) {
+			txtrMrces.append(" Majonēze");
+			cena += 2;
+			txtrCena.setText("Cena:  "+cena+" eur");
+		}else {
+			txtrMrces.setText(txtrMrces.getText().replace(" Majonēze",""));
+		}
+		}
+	});
+		
+		JRadioButton Karija_Poga = new JRadioButton("");
+		Karija_Poga.setBackground(Color.YELLOW);
+		Karija_Poga.setBounds(303, 139, 21, 23);
+		contentPane.add(Karija_Poga);
+		Karija_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (Karija_Poga.isSelected()) {
+			txtrMrces.append(" Karija");
+			cena += 2;
+			txtrCena.setText("Cena:  "+cena+" eur");
+		}else {
+			txtrMrces.setText(txtrMrces.getText().replace(" Karija",""));
+		}
+		}
+	});
+		
+		JRadioButton BBQ_Poga = new JRadioButton("");
+		BBQ_Poga.setBackground(Color.YELLOW);
+		BBQ_Poga.setBounds(303, 165, 21, 23);
+		contentPane.add(BBQ_Poga);
+		BBQ_Poga.addActionListener(new ActionListener( ) {
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		if (BBQ_Poga.isSelected()) {
+			txtrMrces.append(" BBQ");
+			cena += 2;
+			txtrCena.setText("Cena:  "+cena+" eur");
+		}else {
+			txtrMrces.setText(txtrMrces.getText().replace(" BBQ",""));
+		}
+		}
+	});
+		
 		JRadioButton Maza_Poga = new JRadioButton("");
 		Maza_Poga.setBackground(new Color(255, 255, 0));
 		Maza_Poga.setBounds(27, 141, 21, 23);
@@ -257,6 +325,12 @@ public class Kliecis_pica1 extends JFrame {
 			Senes_Poga.setSelected(false);
 			Desa_Poga.setSelected(false);
 			Skinkis_Poga.setSelected(false);
+			Tomatu_Poga.setSelected(false);
+			Majo_Poga.setSelected(false);
+			Karija_Poga.setSelected(false);
+			BBQ_Poga.setSelected(false);
+			PiedevasTextArea.setText("Piedevas: ");
+			txtrMrces.setText("Mērces: ");
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Mazā pica",""));
 		}	
@@ -280,6 +354,12 @@ public class Kliecis_pica1 extends JFrame {
 			Senes_Poga.setSelected(false);
 			Desa_Poga.setSelected(false);
 			Skinkis_Poga.setSelected(false);
+			Tomatu_Poga.setSelected(false);
+			Majo_Poga.setSelected(false);
+			Karija_Poga.setSelected(false);
+			BBQ_Poga.setSelected(false);
+			PiedevasTextArea.setText("Piedevas:");
+			txtrMrces.setText("Mērces: ");
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Lielā pica",""));
 			
@@ -305,6 +385,12 @@ public class Kliecis_pica1 extends JFrame {
 			Senes_Poga.setSelected(false);
 			Desa_Poga.setSelected(false);
 			Skinkis_Poga.setSelected(false);
+			Tomatu_Poga.setSelected(false);
+			Majo_Poga.setSelected(false);
+			Karija_Poga.setSelected(false);
+			BBQ_Poga.setSelected(false);
+			PiedevasTextArea.setText("Piedevas:");
+			txtrMrces.setText("Mērces: ");
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Vidējā pica",""));
 		}	
@@ -346,65 +432,7 @@ public class Kliecis_pica1 extends JFrame {
 		lblNewLabel_5_1_1.setBounds(303, 43, 121, 18);
 		contentPane.add(lblNewLabel_5_1_1);
 		
-		JRadioButton Tomatu_Poga = new JRadioButton("");
-		Tomatu_Poga.setBackground(Color.YELLOW);
-		Tomatu_Poga.setBounds(303, 87, 21, 23);
-		contentPane.add(Tomatu_Poga);
-		Tomatu_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Tomatu_Poga.isSelected()) {
-			txtrMrces.append(" Tomātu");
-		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Tomātu",""));
-		}
-		}
-	});
 		
-		JRadioButton Majo_Poga = new JRadioButton("");
-		Majo_Poga.setBackground(Color.YELLOW);
-		Majo_Poga.setBounds(303, 113, 21, 23);
-		contentPane.add(Majo_Poga);
-		Majo_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Majo_Poga.isSelected()) {
-			txtrMrces.append(" Majonēze");
-		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Majonēze",""));
-		}
-		}
-	});
-		
-		JRadioButton Karija_Poga = new JRadioButton("");
-		Karija_Poga.setBackground(Color.YELLOW);
-		Karija_Poga.setBounds(303, 139, 21, 23);
-		contentPane.add(Karija_Poga);
-		Karija_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (Karija_Poga.isSelected()) {
-			txtrMrces.append(" Karija");
-		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Karija",""));
-		}
-		}
-	});
-		
-		JRadioButton BBQ_Poga = new JRadioButton("");
-		BBQ_Poga.setBackground(Color.YELLOW);
-		BBQ_Poga.setBounds(303, 165, 21, 23);
-		contentPane.add(BBQ_Poga);
-		BBQ_Poga.addActionListener(new ActionListener( ) {
-		@Override
-	public void actionPerformed(ActionEvent e) {
-		if (BBQ_Poga.isSelected()) {
-			txtrMrces.append(" BBQ");
-		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" BBQ",""));
-		}
-		}
-	});
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Tomātu");
 		lblNewLabel_2_1_1.setForeground(Color.RED);
