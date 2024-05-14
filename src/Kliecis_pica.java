@@ -104,6 +104,7 @@ public class Kliecis_pica extends JFrame {
 		txtVrds.setToolTipText("");
 		txtVrds.setBounds(181, 70, 86, 20);
 		contentPane.add(txtVrds);
+		String vards = txtVrds.getText();
 		txtVrds.setColumns(10);
 		
 		txtTalrunis = new JTextField();

@@ -17,6 +17,7 @@ public class Kliecis_pica2 extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -68,13 +69,27 @@ public class Kliecis_pica2 extends JFrame {
 		Random rand = new Random();
 		int laiks = rand.nextInt(58-34+1)+34;	
 	    
-	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir:"+laiks+" minūtues");
+	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir: "+laiks+" minūtues");
 	    lblNewLabel_2_1.setForeground(Color.RED);
 	    lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 24));
 	    lblNewLabel_2_1.setBounds(10, 122, 424, 37);
 	    contentPane.add(lblNewLabel_2_1);
 	    contentPane.add(btnNewButton);
 		
+	    JButton maja = new JButton("");
+	    maja.setBorder(null);
+	    maja.setContentAreaFilled(false);
+	    maja.setIcon(new ImageIcon(Kliecis_pica.class.getResource("/resources/maja.png")));
+	    maja.setBounds(281, -17, 232, 101);
+		maja.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Kliecis_piaa newWIndow = new Kliecis_piaa();
+				newWIndow.setVisible(true);
+				Kliecis_pica2.this.dispose();
+			}
+		});
+		contentPane.add(maja);
+	    
 		JLabel lblNewLabel_2 = new JLabel("Paldies par pirkumu!");
 		lblNewLabel_2.setBounds(83, 74, 341, 37);
 		lblNewLabel_2.setForeground(new Color(255, 0, 0));
