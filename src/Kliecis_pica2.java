@@ -2,12 +2,15 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JButton;
 
 public class Kliecis_pica2 extends JFrame {
 
@@ -34,36 +37,56 @@ public class Kliecis_pica2 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(10, 0, 472, 295);
 		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Jūsu izvēlētās sastāvdaļas:");
-		lblNewLabel_2_1.setForeground(new Color(255, 0, 0));
-		lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 20));
-		lblNewLabel_2_1.setBounds(10, 157, 376, 37);
-		contentPane.add(lblNewLabel_2_1);
+	    JButton btnNewButton = new JButton("New button");
+	    btnNewButton.setBounds(135, 189, 151, 45);
+	    btnNewButton.setForeground(new Color(255, 0, 0));
+	    btnNewButton.setBackground(new Color(255, 0, 0));
+	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
+	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/red.jpg")));
+	    btnNewButton.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		Kliecis_piaa newWIndow = new Kliecis_piaa();
+	    		newWIndow.setVisible(true);
+	    		Kliecis_pica2.this.dispose();
+	    	}
+	    });
+	    contentPane.setLayout(null);
+	    
+	    JLabel lblNewLabel_3 = new JLabel("Atgriezties");
+	    lblNewLabel_3.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 25));
+	    lblNewLabel_3.setBounds(145, 190, 151, 30);
+	    contentPane.add(lblNewLabel_3);
+	    
+	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir:");
+	    lblNewLabel_2_1.setForeground(Color.RED);
+	    lblNewLabel_2_1.setFont(new Font("Serif", Font.ITALIC, 27));
+	    lblNewLabel_2_1.setBounds(10, 122, 370, 37);
+	    contentPane.add(lblNewLabel_2_1);
+	    contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_2 = new JLabel("Maksa:");
+		JLabel lblNewLabel_2 = new JLabel("Paldies par pirkumu!");
+		lblNewLabel_2.setBounds(83, 74, 341, 37);
 		lblNewLabel_2.setForeground(new Color(255, 0, 0));
 		lblNewLabel_2.setFont(new Font("Serif", Font.ITALIC, 27));
-		lblNewLabel_2.setBounds(10, 76, 208, 37);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_6 = new JLabel("Picelīno");
+		lblNewLabel_6.setBounds(157, 0, 277, 48);
 		lblNewLabel_6.setForeground(Color.RED);
 		lblNewLabel_6.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel_6.setBackground(Color.LIGHT_GRAY);
-		lblNewLabel_6.setBounds(157, 0, 277, 48);
 		contentPane.add(lblNewLabel_6);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Pica");
+		lblNewLabel_1.setBounds(-37, -13, 491, 315);
 		lblNewLabel_1.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel_1.setForeground(new Color(255, 255, 0));
-		lblNewLabel_1.setBounds(-37, -13, 491, 315);
 		contentPane.add(lblNewLabel_1);
 		lblNewLabel_1.setIcon(new ImageIcon(Backround));
 		
@@ -74,5 +97,4 @@ public class Kliecis_pica2 extends JFrame {
 		
 
 	}
-
 }

@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.Color;
 
 public class Kliecis_piaa extends JFrame {
 
@@ -42,10 +44,12 @@ public class Kliecis_piaa extends JFrame {
 	    int scaledHeight = 900;
 	    ImageIcon scaledImageIcon = new ImageIcon(originalImageIcon.getImage().getScaledInstance(scaledWidth, scaledHeight, java.awt.Image.SCALE_SMOOTH));
 	    
-	    JButton btnNewButton = new JButton("New button");
+	    JButton btnNewButton = new JButton("");
+	    btnNewButton.setBorder(null);
+	    btnNewButton.setContentAreaFilled(false);
 	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
-	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/red.jpg")));
-	    btnNewButton.setBounds(281, 179, 210, 63);
+	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
+	    btnNewButton.setBounds(281, 266, 220, 73);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Kliecis_pica newWIndow = new Kliecis_pica();
@@ -53,12 +57,25 @@ public class Kliecis_piaa extends JFrame {
 				Kliecis_piaa.this.dispose();
 			}
 		});
+	    JLabel lblNewLabel = new JLabel("Pasūtīt picu");
+	    lblNewLabel.setForeground(new Color(255, 255, 255));
+	    lblNewLabel.setFont(new Font("Segoe UI", Font.BOLD, 35));
+	    lblNewLabel.setBounds(386, 75, 210, 39);
+	    contentPane.add(lblNewLabel);
 	    contentPane.add(btnNewButton);
+
+
 	    
 	    JButton btnNewButton1 = new JButton("New button");
+	    btnNewButton1.setBorder(null);
+	    btnNewButton1.setContentAreaFilled(false);
+	    btnNewButton1.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    	}
+	    });
 	    btnNewButton1.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
-	    btnNewButton1.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/red.jpg")));
-	    btnNewButton1.setBounds(281, 275, 210, 63);
+	    btnNewButton1.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
+	    btnNewButton1.setBounds(281, 404, 210, 63);
 	    
 	    contentPane.add(btnNewButton1);
 

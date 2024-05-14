@@ -46,6 +46,8 @@ public class Kliecis_pica1 extends JFrame {
 	    ImageIcon originalIcon = new ImageIcon("src/resources/Pizza.png");
 	    ImageIcon resizedIcon = new ImageIcon(originalIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH));
 	    JButton btnNewButton_1 = new JButton("");
+	    btnNewButton_1.setBorder(null);
+	    btnNewButton_1.setContentAreaFilled(false);
 	    btnNewButton_1.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		Kliecis_pica2 newWIndow = new Kliecis_pica2();
