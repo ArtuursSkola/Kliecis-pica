@@ -16,7 +16,9 @@ import javax.swing.JTextArea;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 public class Kliecis_pica1 extends JFrame {
 
@@ -30,8 +32,8 @@ public class Kliecis_pica1 extends JFrame {
     private JTextArea MercesTextArea;
     double cena = 0.0;
     String izmers = "";
-    String vieta;
-
+    String vieta = "Uz vietas";
+    
     
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -596,21 +598,26 @@ public class Kliecis_pica1 extends JFrame {
 		
 	}
 	Random rand = new Random();
-	int laiks = rand.nextInt(58-34+1)+34;	
+	int nr = rand.nextInt(58-34+1)+34;	
 	
 	public void Pasutijums() {
 	try {
-
+		StringBuilder sutijumi = new StringBuilder();
+		try(BufferedReader br = new BufferedReader(new FileReader("Pasutijums.txt"))){
+			String line;
+			while((line = br.readLine())!=null) {
+				sutijumi.append(line).append("\n");
+			}
+		}
 		
-		FileWriter fw = new FileWriter("Pasutijums.txt");
+		FileWriter fw = new FileWriter("Pasutijums.txt", true);
 		PrintWriter pw = new PrintWriter(fw);
-		pw.println("Pasūtijuma numurs: "+laiks);
+		pw.println("Pasūtijuma numurs: "+nr);
 		pw.println("Picas izmērs: "+izmers);
 		pw.println("Piedevas: "+PiedevasTextArea.getText());
 		pw.println("Papildus mērces: "+MercesTextArea.getText());
 		pw.println("Maksa: "+cena);
 		pw.println("Sūtijuma atrašanās vieta: "+vieta);
-		pw.println("");
 		pw.close();
 		System.out.print("Sūtijums pabeigts");
 	}	catch (IOException e) {

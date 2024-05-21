@@ -28,7 +28,7 @@ public class Kliecis_pica extends JFrame {
 	private JLabel lblTalrunis;
 	private JLabel lblAdrese;
 	private JButton btnNewButton;
-
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

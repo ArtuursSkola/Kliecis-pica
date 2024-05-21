@@ -6,6 +6,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.Font;
@@ -15,7 +16,6 @@ public class Kliecis_piaa extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {

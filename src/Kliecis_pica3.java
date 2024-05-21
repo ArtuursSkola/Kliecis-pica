@@ -9,7 +9,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JButton;
 
@@ -81,7 +86,7 @@ public class Kliecis_pica3 extends JFrame {
     JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc:"+laiks+" minūtuem");
     lblNewLabel_2_1.setForeground(Color.WHITE);
     lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
-    lblNewLabel_2_1.setBounds(47, 259, 601, 94);
+    lblNewLabel_2_1.setBounds(45, 279, 601, 94);
     contentPane.add(lblNewLabel_2_1);
     
     JLabel lblNewLabel_2 = new JLabel("Paldies par pirkumu!");
@@ -89,6 +94,8 @@ public class Kliecis_pica3 extends JFrame {
     lblNewLabel_2.setFont(new Font("Serif", Font.ITALIC, 27));
     lblNewLabel_2.setBounds(213, 54, 341, 37);
     contentPane.add(lblNewLabel_2);
+    
+    int numurs = readOrderNumberFile();
     
     JLabel lblNewLabel_6 = new JLabel("Picelīno");
     lblNewLabel_6.setForeground(Color.RED);
@@ -104,7 +111,7 @@ public class Kliecis_pica3 extends JFrame {
     contentPane.setLayout(null);
     
     JLabel slice = new JLabel(scaledImageIcon2);
-    slice.setBounds(167, 54, 317, 284);
+    slice.setBounds(168, 89, 317, 284);
     contentPane.add(slice);
     
     JLabel label = new JLabel(scaledImageIcon);
@@ -112,5 +119,36 @@ public class Kliecis_pica3 extends JFrame {
     contentPane.add(label);
     
 }
+    private int  readOrderNumberFile() {
+    	int numurs = -1;
+    	
+    	try(BufferedReader br = new BufferedReader(new FileReader("Pasutijums.txt"))){
+    		String line;
+    		while((line = br.readLine()) != null) {
+    			if(line.startsWith("Pasūtijuma numurs: ")) {
+    				Pattern pat = Pattern.compile(("\\d+"));
+    				Matcher mat = pat.matcher(line);
+    				if(mat.find()) {
+    					numurs = Integer.parseInt(mat.group());
+    					break;
+    					
+    				}
+    				
+    			}
+    		}
+    	}catch(IOException e) {
+    		e.printStackTrace();
+    	}
+    
+	    JLabel lblNewLabel_4 = new JLabel("Jūsu sūtijuma numurs ir: ");
+	    lblNewLabel_4.setForeground(new Color(255, 255, 255));
+	    lblNewLabel_4.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 22));
+	    lblNewLabel_4.setBounds(223, 78, 277, 69);
+	    contentPane.add(lblNewLabel_4);
+
+	    
+	    
+	    return numurs;
+    }
 
 }

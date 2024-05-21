@@ -1,7 +1,88 @@
-Pasūtijuma numurs: 48
+Pasūtijuma numurs: 34
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Ananass Peperoni Senes Šķiņķis Desa
+Papildus mērces: Mērces:  BBQ Karija Majonēze Tomātu
+Maksa: 32.5
+Sūtijuma atrašanās vieta: Piegāde
+
+Pasūtijuma numurs: 40
 Picas izmērs: Vidējā pica
 Piedevas: Piedevas: Peperoni
 Papildus mērces: Mērces:  Majonēze
 Maksa: 13.5
 Sūtijuma atrašanās vieta: null
 
+Pasūtijuma numurs: 56
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Ananass
+Papildus mērces: Mērces:  Majonēze
+Maksa: 15.5
+Sūtijuma atrašanās vieta: null
+
+Pasūtijuma numurs: 58
+Picas izmērs: Mazā pica
+Piedevas: Piedevas:  Senes Peperoni Ananass Šķiņķis Desa
+Papildus mērces: Mērces:  Karija
+Maksa: 17.5
+Sūtijuma atrašanās vieta: Uz vietas
+
+Pasūtijuma numurs: 51
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Ananass
+Papildus mērces: Mērces:  Tomātu
+Maksa: 15.5
+Sūtijuma atrašanās vieta: Uz vietas
+Pasūtijuma numurs: 40
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Peperoni
+Papildus mērces: Mērces:  Majonēze
+Maksa: 18.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 46
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Ananass
+Papildus mērces: Mērces:  Tomātu
+Maksa: 20.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 56
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Peperoni
+Papildus mērces: Mērces:  Karija
+Maksa: 20.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 54
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Peperoni
+Papildus mērces: Mērces:  Majonēze
+Maksa: 18.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 43
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Senes
+Papildus mērces: Mērces:  BBQ
+Maksa: 18.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 56
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Desa
+Papildus mērces: Mērces:  Tomātu
+Maksa: 15.5
+Sūtijuma atrašanās vieta: Uz vietas
+Pasūtijuma numurs: 44
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Ananass
+Papildus mērces: Mērces:  BBQ
+Maksa: 18.5
+Sūtijuma atrašanās vieta: Piegāde
+Pasūtijuma numurs: 55
+Picas izmērs: Mazā pica
+Piedevas: Piedevas:  Peperoni Senes
+Papildus mērces: Mērces:  Tomātu
+Maksa: 13.0
+Sūtijuma atrašanās vieta: Uz vietas
+Pasūtijuma numurs: 50
+Picas izmērs: Mazā pica
+Piedevas: Piedevas:  Desa Šķiņķis
+Papildus mērces: Mērces:  BBQ
+Maksa: 13.0
+Sūtijuma atrašanās vieta: Uz vietas
