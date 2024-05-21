@@ -1,0 +1,7 @@
+Pasūtijuma numurs: 48
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Peperoni
+Papildus mērces: Mērces:  Majonēze
+Maksa: 13.5
+Sūtijuma atrašanās vieta: null
+

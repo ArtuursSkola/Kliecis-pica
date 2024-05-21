@@ -53,7 +53,7 @@ public class Kliecis_pica2 extends JFrame {
 	    maja.setBorder(null);
 	    maja.setContentAreaFilled(false);
 	    maja.setIcon(new ImageIcon(Kliecis_pica.class.getResource("/resources/maja.png")));
-	    maja.setBounds(428, -24, 232, 101);
+	    maja.setBounds(521, -13, 232, 101);
 	    maja.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		Kliecis_piaa newWIndow = new Kliecis_piaa();
@@ -77,7 +77,6 @@ public class Kliecis_pica2 extends JFrame {
 	    	    btnNewButton.setBounds(235, 388, 182, 45);
 	    	    btnNewButton.setForeground(new Color(255, 0, 0));
 	    	    btnNewButton.setBackground(new Color(255, 0, 0));
-	    	    btnNewButton.setSelectedIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/tuksa.png")));
 	    	    btnNewButton.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
 	    	    btnNewButton.addActionListener(new ActionListener() {
 	    	    	public void actionPerformed(ActionEvent e) {

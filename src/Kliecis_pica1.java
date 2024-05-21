@@ -13,13 +13,26 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Random;
+import java.io.File;
+import java.io.FileWriter;
 public class Kliecis_pica1 extends JFrame {
 
+	
+	static File dekstop = new File(System.getProperty("user.home"),"Desktop");
+	static String cels = dekstop.getAbsolutePath();
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
     private JTextArea PiedevasTextArea;
     private JTextArea txtrCena;
+    private JTextArea MercesTextArea;
     double cena = 0.0;
+    String izmers = "";
+    String vieta;
+
+    
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -63,9 +76,11 @@ public class Kliecis_pica1 extends JFrame {
 			if(Pats.isSelected()) {
 			cena += 5;
 			txtrCena.setText("Cena:  "+cena+" eur");
+			vieta = "Piegāde";
 		}else {
 			cena -= 5;
 			txtrCena.setText("Cena:  "+cena+" eur");
+			vieta = "Uz vietas";
 		}
 		}
 		});
@@ -98,14 +113,14 @@ public class Kliecis_pica1 extends JFrame {
 		txtrLielums.setBounds(330, 259, 208, 30);
 		contentPane.add(txtrLielums);
 		
-		JTextArea txtrMrces = new JTextArea();
-		txtrMrces.setWrapStyleWord(true);
-		txtrMrces.setText("Mērces:");
-		txtrMrces.setRows(5);
-		txtrMrces.setLineWrap(true);
-		txtrMrces.setEditable(false);
-		txtrMrces.setBounds(252, 229, 286, 30);
-		contentPane.add(txtrMrces);
+		MercesTextArea = new JTextArea();
+		MercesTextArea.setWrapStyleWord(true);
+		MercesTextArea.setRows(5);
+		MercesTextArea.setLineWrap(true);
+		MercesTextArea.setText("Mērces:");
+		MercesTextArea.setEditable(false);
+		MercesTextArea.setBounds(252, 229, 286, 30);
+		contentPane.add(MercesTextArea);
 		
 		PiedevasTextArea = new JTextArea();
 		PiedevasTextArea.setLineWrap(true);
@@ -274,11 +289,11 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Tomatu_Poga.isSelected()) {
-			txtrMrces.append(" Tomātu");
+			MercesTextArea.append(" Tomātu");
 			cena += 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Tomātu",""));
+			MercesTextArea.setText(MercesTextArea.getText().replace(" Tomātu",""));
 			cena -= 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}
@@ -293,11 +308,11 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Majo_Poga.isSelected()) {
-			txtrMrces.append(" Majonēze");
+			MercesTextArea.append(" Majonēze");
 			cena += 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Majonēze",""));
+			MercesTextArea.setText(MercesTextArea.getText().replace(" Majonēze",""));
 			cena -= 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}
@@ -312,11 +327,11 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (Karija_Poga.isSelected()) {
-			txtrMrces.append(" Karija");
+			MercesTextArea.append(" Karija");
 			cena += 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" Karija",""));
+			MercesTextArea.setText(MercesTextArea.getText().replace(" Karija",""));
 			cena -= 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}
@@ -331,11 +346,11 @@ public class Kliecis_pica1 extends JFrame {
 		@Override
 	public void actionPerformed(ActionEvent e) {
 		if (BBQ_Poga.isSelected()) {
-			txtrMrces.append(" BBQ");
+			MercesTextArea.append(" BBQ");
 			cena += 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}else {
-			txtrMrces.setText(txtrMrces.getText().replace(" BBQ",""));
+			MercesTextArea.setText(MercesTextArea.getText().replace(" BBQ",""));
 			cena -= 2;
 			txtrCena.setText("Cena:  "+cena+" eur");
 		}
@@ -365,7 +380,8 @@ public class Kliecis_pica1 extends JFrame {
 			BBQ_Poga.setSelected(false);
 			Pats.setSelected(false);
 			PiedevasTextArea.setText("Piedevas: ");
-			txtrMrces.setText("Mērces: ");
+			MercesTextArea.setText("Mērces: ");
+			izmers = "Mazā pica";
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Mazā pica",""));
 			cena -= 8;
@@ -373,6 +389,8 @@ public class Kliecis_pica1 extends JFrame {
 		}	
 		}
 	});
+		
+		
 		
 		JRadioButton Liela_Poga = new JRadioButton("");
 		Liela_Poga.setBackground(new Color(255, 255, 0));
@@ -397,7 +415,9 @@ public class Kliecis_pica1 extends JFrame {
 			BBQ_Poga.setSelected(false);
 			Pats.setSelected(false);
 			PiedevasTextArea.setText("Piedevas:");
-			txtrMrces.setText("Mērces: ");
+			MercesTextArea.setText("Mērces: ");
+			izmers = "Lielā pica";
+			
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Lielā pica",""));
 			cena -= 12;
@@ -431,7 +451,8 @@ public class Kliecis_pica1 extends JFrame {
 			BBQ_Poga.setSelected(false);
 			Pats.setSelected(false);
 			PiedevasTextArea.setText("Piedevas:");
-			txtrMrces.setText("Mērces: ");
+			MercesTextArea.setText("Mērces: ");
+			izmers = "Vidējā pica";
 		}else {
 			txtrLielums.setText(PiedevasTextArea.getText().replace(" Vidējā pica",""));
 			cena -= 10;
@@ -483,16 +504,22 @@ public class Kliecis_pica1 extends JFrame {
 	    btnNewButton_1.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		if(Pats.isSelected() && (Liela_Poga.isSelected() || Maza_Poga.isSelected() || Vid_Poga.isSelected())) {
+		    	Pasutijums();
 	    		Kliecis_pica2 newWIndow = new Kliecis_pica2();
 	    		newWIndow.setVisible(true);
 	    		Kliecis_pica1.this.dispose();
+
 	    	}if(!Pats.isSelected() && (Liela_Poga.isSelected() || Vid_Poga.isSelected() || Maza_Poga.isSelected())) {
+	    		Pasutijums();
 	    		Kliecis_pica3 newWindow = new Kliecis_pica3();
 	    		newWindow.setVisible(true);
 	    		Kliecis_pica1.this.dispose();
+
 	    	}
 	    	}
 	    });
+	    
+	    
 	    JLabel lblNewLabel_7 = new JLabel("Pirkt");
 	    lblNewLabel_7.setFont(new Font("Serif", Font.ITALIC, 20));
 	    lblNewLabel_7.setForeground(new Color(255, 0, 0));
@@ -531,8 +558,9 @@ public class Kliecis_pica1 extends JFrame {
 		lblNewLabel.setBounds(154, 151, 669, 439);
 		Image Backround = new ImageIcon(this.getClass().getResource("/resources/t.jpg")).getImage();
 		contentPane.add(lblNewLabel);
-		
-		
+	
+
+	
 		JLabel lblNewLabel_1 = new JLabel("Pica");
 		lblNewLabel_1.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel_1.setForeground(new Color(255, 255, 0));
@@ -563,7 +591,36 @@ public class Kliecis_pica1 extends JFrame {
 			Maza_Poga.setSelected(false);
 }
 		
+		
 		});
+		
 	}
+	Random rand = new Random();
+	int laiks = rand.nextInt(58-34+1)+34;	
+	
+	public void Pasutijums() {
+	try {
+
+		
+		FileWriter fw = new FileWriter("Pasutijums.txt");
+		PrintWriter pw = new PrintWriter(fw);
+		pw.println("Pasūtijuma numurs: "+laiks);
+		pw.println("Picas izmērs: "+izmers);
+		pw.println("Piedevas: "+PiedevasTextArea.getText());
+		pw.println("Papildus mērces: "+MercesTextArea.getText());
+		pw.println("Maksa: "+cena);
+		pw.println("Sūtijuma atrašanās vieta: "+vieta);
+		pw.println("");
+		pw.close();
+		System.out.print("Sūtijums pabeigts");
+	}	catch (IOException e) {
+		e.printStackTrace();
+		System.out.print("Notikusi kļūme"+ e.getMessage());
+
 	}
 	
+	}
+}
+
+
+

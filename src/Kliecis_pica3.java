@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 import javax.swing.JButton;
 
@@ -65,7 +66,8 @@ public class Kliecis_pica3 extends JFrame {
     });
     
 
-    
+	Random rand = new Random();
+	int laiks = rand.nextInt(58-34+1)+34;	
 
     
     JLabel lblNewLabel_3 = new JLabel("Atgriezties");
@@ -76,7 +78,7 @@ public class Kliecis_pica3 extends JFrame {
     contentPane.add(btnNewButton);
     
     
-    JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc: 40 minūtuem");
+    JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc:"+laiks+" minūtuem");
     lblNewLabel_2_1.setForeground(Color.WHITE);
     lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
     lblNewLabel_2_1.setBounds(47, 259, 601, 94);
