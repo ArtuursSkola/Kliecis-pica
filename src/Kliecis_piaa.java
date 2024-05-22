@@ -1,11 +1,16 @@
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -81,26 +86,46 @@ public class Kliecis_piaa extends JFrame {
 
 
 	    
-	    JButton btnNewButton1 = new JButton("New button");
-	    btnNewButton1.setBorder(null);
-	    btnNewButton1.setContentAreaFilled(false);
-	    btnNewButton1.addActionListener(new ActionListener() {
+	    JButton PasPoga = new JButton("New button");
+	    PasPoga.setBorder(null);
+	    PasPoga.setContentAreaFilled(false);
+	    PasPoga.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
+	    		String pas = readOrdersFromFile("Pasutijums.txt");
+	    		displayOrdersWindow(pas);
 	    	}
 	    });
-	    btnNewButton1.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
-	    btnNewButton1.setBounds(307, 302, 210, 63);
+	    PasPoga.setIcon(new ImageIcon(Kliecis_piaa.class.getResource("/resources/neons.png")));
+	    PasPoga.setBounds(307, 302, 210, 63);
 	    
-	    contentPane.add(btnNewButton1);
+	    contentPane.add(PasPoga);
 
 	    
 	    JLabel backroundLabel = new JLabel(scaledImageIcon);
 	    backroundLabel.setBounds(-12, 0, 807, 561);
 	    contentPane.add(backroundLabel);
-	    
-
-	    
-
 	}
+	    private String readOrdersFromFile(String filePath) {
+	    	StringBuilder pas = new StringBuilder();
+	    	try(BufferedReader br = new BufferedReader(new FileReader(filePath))){
+	    		String line;
+	    		while((line = br.readLine()) != null) {
+	    			pas.append(line).append("\n");
+	    		}
+	    	}catch (IOException e){
+	    		e.printStackTrace();
+	    	}
+	    	return pas.toString();
+	}
+	    private void displayOrdersWindow(String pas) {
+	    	JFrame ordersFrame = new JFrame("Vecie sūtijumi");
+	    	ordersFrame.setSize(600, 400);
+	    	JTextArea textArea = new JTextArea(pas);
+	    	textArea.setEditable(false);
+	    	JScrollPane scrollPane = new JScrollPane(textArea);
+	    	ordersFrame.getContentPane().add(scrollPane);
+	    	ordersFrame.setVisible(true);
+	    }
+	    
 }
 	
