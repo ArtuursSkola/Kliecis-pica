@@ -49,6 +49,7 @@ public class Kliecis_piaa extends JFrame {
 	    int scaledHeight = 900;
 	    ImageIcon scaledImageIcon = new ImageIcon(originalImageIcon.getImage().getScaledInstance(scaledWidth, scaledHeight, java.awt.Image.SCALE_SMOOTH));
 	    
+	    
 	    JButton btnNewButton = new JButton("");
 	    btnNewButton.setBorder(null);
 	    btnNewButton.setContentAreaFilled(false);
@@ -68,6 +69,20 @@ public class Kliecis_piaa extends JFrame {
 	    ImageIcon scaledImageIcon2 = new ImageIcon(originalImageIcon2.getImage().getScaledInstance(scaledWidth2, scaledHeight2, java.awt.Image.SCALE_SMOOTH));
 	    contentPane.setLayout(null);
 	    
+	    JButton Exit = new JButton("");
+	    Exit.setBorder(null);
+	    Exit.setContentAreaFilled(false);
+	    ImageIcon originalImageIcon3 = new ImageIcon(getClass().getResource("/resources/stop.png"));
+	    ImageIcon scaledImageIcon3 = new ImageIcon(originalImageIcon3.getImage().getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH));
+	    Exit.setIcon(scaledImageIcon3);
+	    Exit.setBounds(-12, 0, 99, 90);
+	    Exit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+	    System.exit(0);
+			}
+	    });
+	    contentPane.add(Exit);
+	    
 	    JLabel slice = new JLabel(scaledImageIcon2);
 	    slice.setBounds(619, -85, 261, 233);
 	    contentPane.add(slice);
@@ -83,7 +98,6 @@ public class Kliecis_piaa extends JFrame {
 	    lblNewLabel.setBounds(345, 243, 125, 19);
 	    contentPane.add(lblNewLabel);
 	    contentPane.add(btnNewButton);
-
 
 	    
 	    JButton PasPoga = new JButton("New button");
@@ -126,6 +140,5 @@ public class Kliecis_piaa extends JFrame {
 	    	ordersFrame.getContentPane().add(scrollPane);
 	    	ordersFrame.setVisible(true);
 	    }
-	    
 }
 	

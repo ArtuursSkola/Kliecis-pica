@@ -26,3 +26,36 @@ Papildus mērces: Mērces:  Karija
 Maksa: 17.5
 Sūtijuma atrašanās vieta: Uz vietas
 
+Pasūtijuma numurs: 44
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Senes Peperoni Ananass
+Papildus mērces: Mērces:  BBQ Majonēze Tomātu
+Maksa: 22.5
+Sūtijuma atrašanās vieta: Uz vietas
+Pasūtijuma numurs: 58
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Peperoni Ananass Šķiņķis
+Papildus mērces: Mērces:  Majonēze Karija
+Maksa: 20.5
+Sūtijuma atrašanās vieta: Uz vietas
+
+Pasūtijuma numurs: 57
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Ananass
+Papildus mērces: Mērces:  Tomātu
+Maksa: 15.5
+Sūtijuma atrašanās vieta: Uz vietas
+
+
+Pasūtijuma numurs: 37
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Senes Peperoni
+Papildus mērces: Mērces:  Karija
+Maksa: 15.0
+Sūtijuma atrašanās vieta: Uz vietas
+Pasūtijuma numurs: 34
+Picas izmērs: Mazā pica
+Piedevas: Piedevas: 
+Papildus mērces: Mērces: 
+Maksa: 8.0
+Sūtijuma atrašanās vieta: Uz vietas
