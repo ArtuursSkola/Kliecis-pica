@@ -83,7 +83,7 @@ public class Kliecis_pica3 extends JFrame {
     contentPane.add(btnNewButton);
     
     
-    JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc:"+laiks+" minūtuem");
+    JLabel lblNewLabel_2_1 = new JLabel("Jūsu pica būs gatava apmēram pēc: "+laiks+" minūtuem");
     lblNewLabel_2_1.setForeground(Color.WHITE);
     lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
     lblNewLabel_2_1.setBounds(45, 279, 601, 94);
@@ -95,7 +95,6 @@ public class Kliecis_pica3 extends JFrame {
     lblNewLabel_2.setBounds(213, 54, 341, 37);
     contentPane.add(lblNewLabel_2);
     
-    int numurs = readOrderNumberFile();
     
     JLabel lblNewLabel_6 = new JLabel("Picelīno");
     lblNewLabel_6.setForeground(Color.RED);
@@ -119,36 +118,5 @@ public class Kliecis_pica3 extends JFrame {
     contentPane.add(label);
     
 }
-    private int  readOrderNumberFile() {
-    	int numurs = -1;
-    	
-    	try(BufferedReader br = new BufferedReader(new FileReader("Pasutijums.txt"))){
-    		String line;
-    		while((line = br.readLine()) != null) {
-    			if(line.startsWith("Pasūtijuma numurs: ")) {
-    				Pattern pat = Pattern.compile(("\\d+"));
-    				Matcher mat = pat.matcher(line);
-    				if(mat.find()) {
-    					numurs = Integer.parseInt(mat.group());
-    					break;
-    					
-    				}
-    				
-    			}
-    		}
-    	}catch(IOException e) {
-    		e.printStackTrace();
-    	}
-    
-	    JLabel lblNewLabel_4 = new JLabel("Jūsu sūtijuma numurs ir: ");
-	    lblNewLabel_4.setForeground(new Color(255, 255, 255));
-	    lblNewLabel_4.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 22));
-	    lblNewLabel_4.setBounds(223, 78, 277, 69);
-	    contentPane.add(lblNewLabel_4);
-
-	    
-	    
-	    return numurs;
-    }
 
 }

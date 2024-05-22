@@ -5,6 +5,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -13,6 +15,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -513,6 +517,15 @@ public class Kliecis_pica1 extends JFrame {
 
 	    	}if(!Pats.isSelected() && (Liela_Poga.isSelected() || Vid_Poga.isSelected() || Maza_Poga.isSelected())) {
 	    		Pasutijums();
+		    	JFrame orderFrame = new JFrame();
+		    	orderFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		    	orderFrame.setTitle("Pasūtijuma informācija");
+		    	orderFrame.setSize(350,150);
+		    	orderFrame.setLocationRelativeTo(null);
+		    	JLabel orderLabel = new JLabel("Paldies par pirkumu!"
+		    			+ "Jūsu pasūtijuma numurs: "+nr, SwingConstants.CENTER);
+		    	orderFrame.add(orderLabel, BorderLayout.CENTER);
+		    	orderFrame.setVisible(true);
 	    		Kliecis_pica3 newWindow = new Kliecis_pica3();
 	    		newWindow.setVisible(true);
 	    		Kliecis_pica1.this.dispose();

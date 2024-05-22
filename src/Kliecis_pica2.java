@@ -74,7 +74,7 @@ public class Kliecis_pica2 extends JFrame {
 	    
 	    
 	    JLabel slice = new JLabel(scaledImageIcon2);
-	    slice.setBounds(254, 139, 205, 195);
+	    slice.setBounds(243, 107, 205, 195);
 	    contentPane.add(slice);
 	    		
 	    	    JButton btnNewButton = new JButton("New button");
@@ -105,13 +105,12 @@ public class Kliecis_pica2 extends JFrame {
 	    	    contentPane.add(lblNewLabel_3);
 	    	    contentPane.add(btnNewButton);
 	    	    
-	    int numurs = readOrderNumberFile();
 
 	    	    
 	    JLabel lblNewLabel_2_1 = new JLabel("Jūsu picas piegādes laiks ir: "+laiks+" minūtues");
 	    lblNewLabel_2_1.setForeground(new Color(255, 255, 255));
 	    lblNewLabel_2_1.setFont(new Font("Serif", Font.BOLD, 28));
-	    lblNewLabel_2_1.setBounds(96, 322, 516, 37);
+	    lblNewLabel_2_1.setBounds(102, 341, 516, 37);
 	    contentPane.add(lblNewLabel_2_1);
 	    
 	    JLabel lblNewLabel_6 = new JLabel("Picelīno");
@@ -144,35 +143,4 @@ public class Kliecis_pica2 extends JFrame {
 	    lblNewLabel.setBounds(10, 0, 472, 295);
 	    contentPane.add(lblNewLabel);
 	}
-	    private int  readOrderNumberFile() {
-	    	int numurs = -1;
-	    	
-	    	try(BufferedReader br = new BufferedReader(new FileReader("Pasutijums.txt"))){
-	    		String line;
-	    		while((line = br.readLine()) != null) {
-	    			if(line.startsWith("Pasūtijuma numurs: ")) {
-	    				Pattern pat = Pattern.compile(("\\d+"));
-	    				Matcher mat = pat.matcher(line);
-	    				if(mat.find()) {
-	    					numurs = Integer.parseInt(mat.group());
-	    					break;
-	    					
-	    				}
-	    				
-	    			}
-	    		}
-	    	}catch(IOException e) {
-	    		e.printStackTrace();
-	    	}
-	    
-		    JLabel lblNewLabel_4 = new JLabel("Jūsu sūtijuma numurs ir: "+numurs);
-		    lblNewLabel_4.setForeground(new Color(255, 255, 255));
-		    lblNewLabel_4.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 22));
-		    lblNewLabel_4.setBounds(233, 75, 302, 69);
-		    contentPane.add(lblNewLabel_4);
-
-		    
-		    
-		    return numurs;
-	    }
 }

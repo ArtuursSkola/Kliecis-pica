@@ -7,7 +7,7 @@ Picas pasūtīšanas sistēma
 - [x] Izveidot Log in sistēmu
 - [x]  Izveidot picas veidošanas logu
 - [x]  Izveidots picas cenas kalkulātors
-- [ ]  Programma aprēķina cenu
-- [ ]  Programma izvada piegādes laiku
-- [ ]  Lietotājs spēj apskatīt jau klientiem nodotos sūtijumus
+- [x]  Programma aprēķina cenu
+- [x]  Programma izvada piegādes laiku
+- [x]  Lietotājs spēj apskatīt jau klientiem nodotos sūtijumus
 
