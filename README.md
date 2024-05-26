@@ -14,4 +14,4 @@ Picas pasūtīšanas sistēma
 - [x]  Programma izvada piegādes laiku
 - [x]  Lietotājs spēj apskatīt jau klientiem nodotos sūtijumus
 
-![Alt text](C:\Users\Lietotajs\eclipse-workspace\Kliecis-pica\src\resources\mainMenu)
+![Main Menu](src/resources/mainMenu.png)
