@@ -39,21 +39,24 @@ Labajā apakša tiek parādīta picas cena
 Picas numurs:
   
 ![Picas nr](src/resources/sutijumaNr.png)
-             Ja izvēlamies picu saņemt uz vietas, mums parādās šads logs,
+          Ja izvēlamies picu saņemt uz vietas, mums parādās šads logs,
 kas satur picas numuru, lai to saņemtu uz vietas
  
 Info, kas tiek saņemts, ja picas saņemšana ir uz vietas:
 ![uzvietas info](src/resources/uzvietasInfo.png)
-Šeit mēs redzam logu, kas parāda laiku ap cikiem pica būs gatava
+Šeit mēs redzam logu, kas parāda laiku ap cikiem pica būs gatava.
+Mums ir dota opcija atgriezties uz main menu
  
 Informācijas ievade:
 ![Ifno logs](src/resources/ievaditInfo.png)
          Ja pica tiek sūtīta, tad klientam ir jāieraksta info,
-lai piegādātājs spētu nodot picu
+lai piegādātājs spētu nodot picu. Šajā logā vārdam ir jābūt vismaz 3 burtiem garam, 
+talrunim ir jābut 8 cip un adresei ir jābūt vismaz 5 burtu garai
  
 Info par picas piegādes laiku:
 ![Piegades laiks](src/resources/piegadesInfo.png)
-Šajā logā ir redzams, pēc cik min pica būs gatava
+Šajā logā ir redzams, pēc cik min pica būs gatava.
+Mums ir opcija doties atpakaļ uz main menu logu
 
 
 
