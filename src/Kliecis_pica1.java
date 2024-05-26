@@ -511,7 +511,7 @@ public class Kliecis_pica1 extends JFrame {
 	    	public void actionPerformed(ActionEvent e) {
 	    		if(Pats.isSelected() && (Liela_Poga.isSelected() || Maza_Poga.isSelected() || Vid_Poga.isSelected())) {
 		    	Pasutijums();
-	    		Kliecis_pica2 newWIndow = new Kliecis_pica2();
+	    		Kliecis_pica newWIndow = new Kliecis_pica();
 	    		newWIndow.setVisible(true);
 	    		Kliecis_pica1.this.dispose();
 

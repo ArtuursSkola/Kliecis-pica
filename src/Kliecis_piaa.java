@@ -57,7 +57,7 @@ public class Kliecis_piaa extends JFrame {
 	    btnNewButton.setBounds(297, 218, 220, 73);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Kliecis_pica newWIndow = new Kliecis_pica();
+				Kliecis_pica1 newWIndow = new Kliecis_pica1();
 				newWIndow.setVisible(true);
 				Kliecis_piaa.this.dispose();
 			}

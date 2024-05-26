@@ -28,6 +28,9 @@ public class Kliecis_pica extends JFrame {
 	private JLabel lblTalrunis;
 	private JLabel lblAdrese;
 	private JButton btnNewButton;
+	private JLabel talrunisWrong;
+	private JLabel adreseWrong;
+	private JLabel vardsWrong;
 	
 
 	public static void main(String[] args) {
@@ -58,17 +61,58 @@ public class Kliecis_pica extends JFrame {
 	    btnNewButton = new JButton("Turpināt");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String phoneNumber = txtTalrunis.getText();
+				String telefons = txtTalrunis.getText();
 				String vards = txtVrds.getText();
 				String adrese = txtAdrese.getText();
-				if (phoneNumber.length() ==8 && phoneNumber.matches("\\d+") && vards.length()>2 && vards.matches("[a-zA-Z]+")
-						&& adrese.length()>4 && adrese.matches("[a-zA-Z]+")) {
-				Kliecis_pica1 newWIndow = new Kliecis_pica1();
+				boolean isValid = true;
+				
+				if (vards.length() <= 2 || !vards.matches("[a-zA-Z]+")) {
+					vardsWrong.setVisible(true);
+					isValid = false;
+				}else {
+					vardsWrong.setVisible(false);
+				}
+				if (telefons.length() < 8 || telefons.length() > 8 || !telefons.matches("\\d+")) {
+					talrunisWrong.setVisible(true);
+					isValid = false;
+				}else {
+					talrunisWrong.setVisible(false);
+				}
+				if (adrese.length() <= 4 || !adrese.matches("[a-zA-Z]+")) {
+					adreseWrong.setVisible(true);
+					isValid = false;
+				}else {
+					adreseWrong.setVisible(false);
+				}
+				if(isValid) {
+				Kliecis_pica2 newWIndow = new Kliecis_pica2();
 				newWIndow.setVisible(true);
 				Kliecis_pica.this.dispose();
 			}
 			}
+		
 		});
+		
+		adreseWrong = new JLabel("Adresē jābūt vismaz 5 burti");
+		adreseWrong.setFont(new Font("Tahoma", Font.BOLD, 12));
+		adreseWrong.setForeground(new Color(255, 0, 0));
+		adreseWrong.setBounds(186, 132, 175, 14);
+		adreseWrong.setVisible(false);
+		contentPane.add(adreseWrong);
+		
+		talrunisWrong = new JLabel("Nepareiza ievade ( 8 cip)");
+		talrunisWrong.setFont(new Font("Tahoma", Font.BOLD, 12));
+		talrunisWrong.setForeground(new Color(255, 0, 0));
+		talrunisWrong.setBounds(186, 101, 199, 14);
+		talrunisWrong.setVisible(false);
+		contentPane.add(talrunisWrong);
+		
+		vardsWrong = new JLabel("Vārds ir pārāk īss vai nekorekts");
+		vardsWrong.setFont(new Font("Tahoma", Font.BOLD, 12));
+		vardsWrong.setForeground(new Color(255, 0, 0));
+		vardsWrong.setBounds(186, 70, 199, 14);
+		vardsWrong.setVisible(false);
+		contentPane.add(vardsWrong);
 		
 		
 		
@@ -95,33 +139,32 @@ public class Kliecis_pica extends JFrame {
 		lblNewLabel.setBackground(new Color(192, 192, 192));
 		lblNewLabel.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 30));
 		lblNewLabel.setForeground(new Color(255, 0, 0));
-		lblNewLabel.setBounds(174, 11, 277, 48);
+		lblNewLabel.setBounds(165, 0, 277, 48);
 		contentPane.add(lblNewLabel);
 		
 		
 		
 		txtVrds = new JTextField();
 		txtVrds.setToolTipText("");
-		txtVrds.setBounds(181, 70, 86, 20);
+		txtVrds.setBounds(90, 67, 86, 20);
 		contentPane.add(txtVrds);
-		String vards = txtVrds.getText();
 		txtVrds.setColumns(10);
 		
 		txtTalrunis = new JTextField();
-		txtTalrunis.setBounds(181, 101, 86, 20);
+		txtTalrunis.setBounds(90, 98, 86, 20);
 		contentPane.add(txtTalrunis);
 		txtTalrunis.setColumns(10);
 			
 		
 		txtAdrese = new JTextField();
-		txtAdrese.setBounds(181, 132, 86, 20);
+		txtAdrese.setBounds(90, 129, 86, 20);
 		contentPane.add(txtAdrese);
 		txtAdrese.setColumns(10);
 		
 		lblVrds = new JLabel("Vārds:");
 		lblVrds.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 15));
 		lblVrds.setForeground(new Color(255, 0, 0));
-		lblVrds.setBounds(112, 70, 70, 14);
+		lblVrds.setBounds(10, 68, 70, 14);
 		contentPane.add(lblVrds);
 		lblVards.setBounds(74, -17, 151, 65);
 		contentPane.add(lblVards);
@@ -130,18 +173,18 @@ public class Kliecis_pica extends JFrame {
 		lblTalrunis = new JLabel("Talrunis:");
 		lblTalrunis.setForeground(Color.RED);
 		lblTalrunis.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 15));
-		lblTalrunis.setBounds(101, 104, 70, 14);
+		lblTalrunis.setBounds(10, 102, 70, 14);
 		contentPane.add(lblTalrunis);
 		
 		
 		lblAdrese = new JLabel("Adrese:");
 		lblAdrese.setForeground(Color.RED);
 		lblAdrese.setFont(new Font("Serif", Font.BOLD | Font.ITALIC, 15));
-		lblAdrese.setBounds(101, 135, 70, 14);
+		lblAdrese.setBounds(10, 133, 70, 14);
 		contentPane.add(lblAdrese);
 		
 		lblNewLabel_1 = new JLabel("New label");
-		lblNewLabel_1.setBounds(-121, -40, 545, 340);
+		lblNewLabel_1.setBounds(-64, -78, 581, 547);
 		Image Backround = new ImageIcon(this.getClass().getResource("/resources/PicasBackround.jpeg")).getImage();
 		lblNewLabel_1.setIcon(new ImageIcon(Backround));
 		contentPane.add(lblNewLabel_1);
