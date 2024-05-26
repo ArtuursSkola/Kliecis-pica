@@ -14,4 +14,12 @@ Picas pasūtīšanas sistēma
 - [x]  Programma izvada piegādes laiku
 - [x]  Lietotājs spēj apskatīt jau klientiem nodotos sūtijumus
 
+
 ![Main Menu](src/resources/mainMenu.png)
+
+1. Main menu, kur spējam iziet no programmas, ja uzspiežam uz pogu,
+kas atrodas kreisajā, augšējā pusē
+2. Mums ir 2 ivēles, veidot picu vai apskatīt vecos sūtijumus
+
+![Vecie sut](src/resources/sutijumuApskate.png)
+
