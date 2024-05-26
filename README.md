@@ -20,7 +20,7 @@ Main Menu:
 ![Main Menu](src/resources/mainMenu.png)
  
 Main menu, kur spējam iziet no programmas, ja uzspiežam uz pogu,
-kas atrodas kreisajā, augšējā pusē
+kas atrodas kreisajā, augšējā pusē.  
 Mums ir 2 ivēles, veidot picu vai apskatīt vecos sūtijumus
  
  
@@ -32,11 +32,14 @@ Vecie Sūtijumi:
 Picas Sūtīšana:
 ![Picas veidošana](src/resources/sutijums.png)
 Šajā logā mēs spējam izvēleties picas izmēru, sastāvdaļas, piedevas
-un picas saņemšanas veidu (uz vietas/ piegāde)
+un picas saņemšanas veidu (uz vietas/ piegāde).
+Labajā apakša tiek parādīta picas cena
+
  
 Picas numurs:
+  
 ![Picas nr](src/resources/sutijumaNr.png)
-Ja izvēlamies picu saņemt uz vietas, mums parādās šads logs,
+             Ja izvēlamies picu saņemt uz vietas, mums parādās šads logs,
 kas satur picas numuru, lai to saņemtu uz vietas
  
 Info, kas tiek saņemts, ja picas saņemšana ir uz vietas:
@@ -45,7 +48,7 @@ Info, kas tiek saņemts, ja picas saņemšana ir uz vietas:
  
 Informācijas ievade:
 ![Ifno logs](src/resources/ievaditInfo.png)
-Ja pica tiek sūtīta, tad klientam ir jāieraksta info,
+         Ja pica tiek sūtīta, tad klientam ir jāieraksta info,
 lai piegādātājs spētu nodot picu
  
 Info par picas piegādes laiku:
