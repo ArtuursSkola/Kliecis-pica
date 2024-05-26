@@ -625,12 +625,15 @@ public class Kliecis_pica1 extends JFrame {
 		
 		FileWriter fw = new FileWriter("Pasutijums.txt", true);
 		PrintWriter pw = new PrintWriter(fw);
+		pw.println("............................................");
 		pw.println("Pasūtijuma numurs: "+nr);
 		pw.println("Picas izmērs: "+izmers);
 		pw.println("Piedevas: "+PiedevasTextArea.getText());
 		pw.println("Papildus mērces: "+MercesTextArea.getText());
 		pw.println("Maksa: "+cena);
 		pw.println("Sūtijuma atrašanās vieta: "+vieta);
+		pw.println("............................................");
+		pw.println("");
 		pw.close();
 		System.out.print("Sūtijums pabeigts");
 	}	catch (IOException e) {
