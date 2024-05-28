@@ -54,6 +54,7 @@ public class Kliecis_pica1 extends JFrame {
 
 
 	public Kliecis_pica1() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 564, 405);
 		contentPane = new JPanel();
@@ -616,6 +617,11 @@ public class Kliecis_pica1 extends JFrame {
 	public void Pasutijums() {
 	try {
 		StringBuilder sutijumi = new StringBuilder();
+		File file = new File("Pasutijums.txt");
+		if(!file.exists()) {
+			file.createNewFile();
+		}
+		
 		try(BufferedReader br = new BufferedReader(new FileReader("Pasutijums.txt"))){
 			String line;
 			while((line = br.readLine())!=null) {
@@ -623,7 +629,7 @@ public class Kliecis_pica1 extends JFrame {
 			}
 		}
 		
-		FileWriter fw = new FileWriter("Pasutijums.txt", true);
+		FileWriter fw = new FileWriter(file, true);
 		PrintWriter pw = new PrintWriter(fw);
 		pw.println("............................................");
 		pw.println("Pasūtijuma numurs: "+nr);

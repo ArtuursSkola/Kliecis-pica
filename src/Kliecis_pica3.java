@@ -39,6 +39,7 @@ public class Kliecis_pica3 extends JFrame {
 
 
 	public Kliecis_pica3() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(700, 500);
 		contentPane = new JPanel();

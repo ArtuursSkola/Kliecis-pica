@@ -43,3 +43,30 @@ Maksa: 9.5
 Sūtijuma atrašanās vieta: Uz vietas
 ............................................
 
+............................................
+Pasūtijuma numurs: 52
+Picas izmērs: Lielā pica
+Piedevas: Piedevas: Senes Peperoni
+Papildus mērces: Mērces:  Karija Majonēze
+Maksa: 19.0
+Sūtijuma atrašanās vieta: Uz vietas
+............................................
+
+............................................
+Pasūtijuma numurs: 43
+Picas izmērs: Mazā pica
+Piedevas: Piedevas:  Šķiņķis
+Papildus mērces: Mērces:  BBQ
+Maksa: 11.5
+Sūtijuma atrašanās vieta: Uz vietas
+............................................
+
+............................................
+Pasūtijuma numurs: 34
+Picas izmērs: Vidējā pica
+Piedevas: Piedevas: Peperoni
+Papildus mērces: Mērces:  Majonēze
+Maksa: 13.5
+Sūtijuma atrašanās vieta: Uz vietas
+............................................
+

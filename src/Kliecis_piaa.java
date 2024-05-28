@@ -15,6 +15,9 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.BorderLayout;
 import java.awt.Color;
 
 public class Kliecis_piaa extends JFrame {
@@ -37,12 +40,18 @@ public class Kliecis_piaa extends JFrame {
 
 
 	public Kliecis_piaa() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(800, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JPanel centerPanel = new JPanel(new GridBagLayout());
+		GridBagConstraints gbc = new GridBagConstraints();
+		gbc.fill = GridBagConstraints.BOTH;
+		contentPane.add(centerPanel, BorderLayout.CENTER);
 		
 	    ImageIcon originalImageIcon = new ImageIcon(getClass().getResource("/resources/Picerija.jpeg"));
 	    int scaledWidth = 900;
@@ -63,6 +72,13 @@ public class Kliecis_piaa extends JFrame {
 			}
 		});
 	    
+		gbc.gridx = 1;
+		gbc.gridy = 1;
+		gbc.gridwidth= 1;
+		gbc.gridheight = 1;
+		centerPanel.add(btnNewButton, gbc);
+				
+		
 	    ImageIcon originalImageIcon2 = new ImageIcon(getClass().getResource("/resources/wheel.png"));
 	    int scaledWidth2 = 50;
 	    int scaledHeight2 = 50;
@@ -81,10 +97,15 @@ public class Kliecis_piaa extends JFrame {
 	    System.exit(0);
 			}
 	    });
-	    contentPane.add(Exit);
+	    gbc.gridx = 0;
+	    gbc.gridy = 0;
+	    gbc.gridwidth = 1;
+	    gbc.gridheight = 1;
+	    contentPane.add(Exit, gbc);
 	    
 	    JLabel slice = new JLabel(scaledImageIcon2);
 	    slice.setBounds(619, -85, 261, 233);
+	    
 	    contentPane.add(slice);
 		
 	    JLabel lblApskattVecosStijumus = new JLabel("Vecie sūtijumi");
@@ -118,6 +139,8 @@ public class Kliecis_piaa extends JFrame {
 	    JLabel backroundLabel = new JLabel(scaledImageIcon);
 	    backroundLabel.setBounds(-12, 0, 807, 561);
 	    contentPane.add(backroundLabel);
+	    
+	    contentPane.add(centerPanel, BorderLayout.CENTER);
 	}
 	    private String readOrdersFromFile(String filePath) {
 	    	StringBuilder pas = new StringBuilder();
